@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/email-client-frontend/static/css/main.bae25071.chunk.css",
+    "main.js": "/email-client-frontend/static/js/main.d2a9ca3a.chunk.js",
+    "main.js.map": "/email-client-frontend/static/js/main.d2a9ca3a.chunk.js.map",
+    "runtime-main.js": "/email-client-frontend/static/js/runtime-main.6d47e059.js",
+    "runtime-main.js.map": "/email-client-frontend/static/js/runtime-main.6d47e059.js.map",
+    "static/css/2.563af9af.chunk.css": "/email-client-frontend/static/css/2.563af9af.chunk.css",
+    "static/js/2.0fd2afd3.chunk.js": "/email-client-frontend/static/js/2.0fd2afd3.chunk.js",
+    "static/js/2.0fd2afd3.chunk.js.map": "/email-client-frontend/static/js/2.0fd2afd3.chunk.js.map",
+    "index.html": "/email-client-frontend/index.html",
+    "precache-manifest.88ed7aa83ff83234116d52fb4efe3928.js": "/email-client-frontend/precache-manifest.88ed7aa83ff83234116d52fb4efe3928.js",
+    "service-worker.js": "/email-client-frontend/service-worker.js",
+    "static/css/2.563af9af.chunk.css.map": "/email-client-frontend/static/css/2.563af9af.chunk.css.map",
+    "static/css/main.bae25071.chunk.css.map": "/email-client-frontend/static/css/main.bae25071.chunk.css.map",
+    "static/js/2.0fd2afd3.chunk.js.LICENSE.txt": "/email-client-frontend/static/js/2.0fd2afd3.chunk.js.LICENSE.txt",
+    "static/media/email-image.png": "/email-client-frontend/static/media/email-image.0239bd87.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6d47e059.js",
+    "static/css/2.563af9af.chunk.css",
+    "static/js/2.0fd2afd3.chunk.js",
+    "static/css/main.bae25071.chunk.css",
+    "static/js/main.d2a9ca3a.chunk.js"
+  ]
+}
