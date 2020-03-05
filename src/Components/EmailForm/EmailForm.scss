@@ -1,0 +1,16 @@
+.ant-form.email-form {
+  label {
+    width: 15px;
+    margin-right: 50px;
+  }
+
+  label[title="Attachment"] {
+    width: 105px;
+  }
+}
+
+.ant-form-item-control {
+  .email-form-control {
+    margin-left: 30px;
+  }
+}

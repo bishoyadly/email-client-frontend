@@ -1,0 +1,22 @@
+.emailForm {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: space-around;
+}
+
+.formItem {
+  min-width: 100%;
+}
+
+.mailFormSubmitButton {
+  min-width: 330px;
+  height: 50px;
+  border-radius: 100px;
+  font-size: 20px;
+}
+
+.uploadControl {
+  margin-left: -30px;
+}
