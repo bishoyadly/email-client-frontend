@@ -7,7 +7,7 @@ const axiosInstance = axios.create({
 export function uploadFile(uploadedFile) {
     const formData = new FormData();
     formData.append('file', uploadedFile);
-    axiosInstance({
+    return axiosInstance({
         method: 'POST',
         url: `${process.env.REACT_APP_BACKEND_URL}/attachment-file`,
         data: formData,
