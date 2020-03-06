@@ -1,5 +1,5 @@
 import React from 'react';
-import {Form, Input, Button, Select} from 'antd';
+import {Form, Input, Button, Select, message} from 'antd';
 import emailFormStyles from './EmailForm.module.scss';
 import PicturesWall from '../PicturesWall/PicturesWall';
 import './EmailForm.scss';
@@ -16,15 +16,25 @@ const layout = {
     },
 };
 
+const success = () => {
+    message.success('Email message sent successfully');
+};
+
+const error = () => {
+    message.error('This is an error message');
+};
+
 export default function EmailForm() {
 
     const onFinish = values => {
         const emailData = {
-            senders: values.senders,
-            reciepents: values.recipients,
+            subject: values.subject,
+            recipients: values.recipients,
             emailBody: values.emailBody
         };
-        sendEmail(emailData);
+        sendEmail(emailData)
+            .then(success)
+            .catch(error);
     };
 
     const onFinishFailed = errorInfo => {
@@ -42,28 +52,6 @@ export default function EmailForm() {
             onFinish={onFinish}
             onFinishFailed={onFinishFailed}
         >
-            <Form.Item
-                className={emailFormStyles.formItem}
-                label="From"
-                colon={false}
-                name="senders"
-                labelCol={{'span': 0, 'offset': 4}}
-                rules={[
-                    {
-                        required: true,
-                        message: 'Please at least one sender mail',
-                    },
-                ]}
-            >
-                <Select
-                    className={'email-form-control'}
-                    mode="tags"
-                    placeholder="Senders mails ex. test@example.com"
-                >
-                    <Option key={"bishoy@gmail.com"}> bishoy@gmail.com </Option>
-                </Select>
-            </Form.Item>
-
 
             <Form.Item
                 className={emailFormStyles.formItem}
@@ -85,6 +73,28 @@ export default function EmailForm() {
                 >
                     <Option key={"bishoy@gmail.com"}> bishoy@gmail.com </Option>
                 </Select>
+            </Form.Item>
+
+
+            <Form.Item
+                className={emailFormStyles.formItem}
+                label="Subject"
+                colon={false}
+                name="subject"
+                labelCol={{'span': 0, 'offset': 4}}
+                rules={[
+                    {
+                        required: true,
+                        message: 'Please at least one sender mail',
+                    },
+                ]}
+            >
+                <Input
+                    className={'email-form-control'}
+                    mode="tags"
+                    placeholder="Email Subject"
+                >
+                </Input>
             </Form.Item>
 
 

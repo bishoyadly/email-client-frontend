@@ -23,5 +23,5 @@ export function removeUploadedFile(fileObj) {
 }
 
 export function sendEmail(emailData) {
-    axiosInstance.post('/send-mail', emailData);
+    return axiosInstance.post('/send-mail', emailData);
 }
