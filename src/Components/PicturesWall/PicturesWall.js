@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Upload, Modal, message} from 'antd';
 import {PlusOutlined} from '@ant-design/icons';
 import pictureWallsStyles from './PicturesWalls.module.scss';
+import {uploadFile,removeUploadedFile} from '../../Apis';
 
 function getBase64(file) {
     return new Promise((resolve, reject) => {
@@ -63,11 +64,12 @@ export default function PicturesWall() {
         <div className={pictureWallsStyles.uploadContainer}>
             <Upload
                 className={pictureWallsStyles.uploadButton}
-                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                action={uploadFile}
                 listType="picture-card"
                 fileList={fileList}
                 onPreview={handlePreview}
                 onChange={handleChange}
+                onRemove={removeUploadedFile}
             >
                 {uploadButton}
             </Upload>

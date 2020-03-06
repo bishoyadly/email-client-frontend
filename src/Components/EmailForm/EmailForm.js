@@ -3,6 +3,7 @@ import {Form, Input, Button, Select} from 'antd';
 import emailFormStyles from './EmailForm.module.scss';
 import PicturesWall from '../PicturesWall/PicturesWall';
 import './EmailForm.scss';
+import {sendEmail} from '../../Apis';
 
 const {Option} = Select;
 const {TextArea} = Input;
@@ -18,7 +19,12 @@ const layout = {
 export default function EmailForm() {
 
     const onFinish = values => {
-        console.log('Success:', values);
+        const emailData = {
+            senders: values.senders,
+            reciepents: values.recipients,
+            emailBody: values.emailBody
+        };
+        sendEmail(emailData);
     };
 
     const onFinishFailed = errorInfo => {
@@ -40,7 +46,7 @@ export default function EmailForm() {
                 className={emailFormStyles.formItem}
                 label="From"
                 colon={false}
-                name="From"
+                name="senders"
                 labelCol={{'span': 0, 'offset': 4}}
                 rules={[
                     {
@@ -54,7 +60,7 @@ export default function EmailForm() {
                     mode="tags"
                     placeholder="Senders mails ex. test@example.com"
                 >
-                    <Option key={"1"}> bishoy@gmail.com </Option>
+                    <Option key={"bishoy@gmail.com"}> bishoy@gmail.com </Option>
                 </Select>
             </Form.Item>
 
@@ -63,7 +69,7 @@ export default function EmailForm() {
                 className={emailFormStyles.formItem}
                 label="To"
                 colon={false}
-                name="To"
+                name="recipients"
                 labelCol={{'span': 0, 'offset': 4}}
                 rules={[
                     {
@@ -77,7 +83,7 @@ export default function EmailForm() {
                     mode="tags"
                     placeholder="Recipients mails ex. test@example.com"
                 >
-                    <Option key={"1"}> bishoy@gmail.com </Option>
+                    <Option key={"bishoy@gmail.com"}> bishoy@gmail.com </Option>
                 </Select>
             </Form.Item>
 
@@ -86,7 +92,7 @@ export default function EmailForm() {
                 className={emailFormStyles.formItem}
                 label="Body"
                 colon={false}
-                name="Body"
+                name="emailBody"
                 labelCol={{'span': 0, 'offset': 4}}
                 rules={[
                     {
